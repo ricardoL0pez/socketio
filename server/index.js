@@ -1,4 +1,3 @@
-const { log } = require('console');
 const http = require('http');
 
 const server = http.createServer();
@@ -19,4 +18,4 @@ io.on('connection', (socket) => {
     })
 });
 
-server.listen(3000); //Posteriormente esto de deberia definir en un fichero de entorno .env
+server.listen(3000); 

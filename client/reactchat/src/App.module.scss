@@ -1,24 +1,80 @@
 @use '../src/SCSS/abstracts/mixins' as *;
 @import '../src/SCSS/abstracts/variables';
 
-.container{
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+.container {
     @include flexbox(column, center, center, center);
-    width: 100vh;
+    margin: 0 auto;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 400px;
+
+
+    h2 {
+        font-weight: 400;
+        color: cyan;
+        font-size: 3rem;
+        margin: 0;
+    }
 
     .ulMessage {
-        /* max-width: 800px;
-        margin: 10px auto; */
         list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      
-      .liMessage {
-        background-color: lightblue;
-        border: 2px solid dodgerblue;
-        padding: 10px 20px;
-        color: black;
-      }
-}
+        width: 100%;
+        padding: 0;
+    }
 
+    .liMessage {
+
+        color: rgb(14, 14, 14);
+        font-size: 0.8rem;
+        width: 100%;
+
+        p {
+            margin: 5px;
+            width: 100%;
+            border: 2px solid $primary-color;
+            padding: 5px;
+            background-color: $grey3;
+        }
+    }
+
+
+
+    input,
+    button {
+        width: 100%;
+        padding: 5px;
+        border-radius: 0;
+        height: 30px;
+    }
+
+    input {
+        margin-block: 1rem;
+        background-color: $grey1;
+        border: 1px solid black;
+        color: white;
+        outline: none;
+    }
+
+    button {
+
+        background-color: black;
+        color: #ffff;
+        cursor: pointer;
+        border: none;
+    }
+
+    button:hover {
+        border: 1px solid cyan;
+        border-radius: 0;
+    }
+
+    button:active {
+        border-radius: 0;
+        transform: translateY(-15%);
+    }
+}

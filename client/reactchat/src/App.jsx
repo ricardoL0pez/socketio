@@ -1,14 +1,13 @@
-import  styles from './App.module.scss'
+import styles from './App.module.scss'
 import { io } from 'socket.io-client';
 import { useState, useEffect } from 'react';
-import { UlMessage, LiMessage } from './Components/UiComponents.jsx/UiComponents';
 
 const socket = io('http://localhost:3000')
 
 function App() {
   const [isConnected, setIsConnected] = useState(false);
-  const [newMessage, setNewMessage]= useState('');
-  const [message, setMessage]= useState([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [message, setMessage] = useState([]);
 
   useEffect(() => {
     socket.on('connect', () => setIsConnected(true));
@@ -24,34 +23,34 @@ function App() {
   }, []);
 
   const sendMessage = () => {
-socket.emit('chat_message', {
-  usuario: socket.id, 
-  mensaje: newMessage 
-})
+    socket.emit('chat_message', {
+      usuario: socket.id,
+      mensaje: newMessage
+    })
   };
 
   return (
     <div className={styles.container}>
+      <h2>{isConnected ? 'Chat' : 'No conectado'}</h2>
 
-      <h2>{isConnected ? 'Conectado' : 'No conectado'}</h2>
-
-      
-        <ul className={styles.liMessage}>
+      <ul className={styles.liMessage}>
 
         {message.map(message => (
-        <li className={styles.ulMessage}>{message.usuario}:{message.mensaje}</li>
-      ))}
+          <li className={styles.ulMessage}>
+            <p>{message.usuario}:{message.mensaje}</p></li>
+        ))}
 
-        </ul>
-     
+      </ul>
 
-      <input 
-      type="text" 
-      onChange={e=>setNewMessage(e.target.value)}
+
+      <input
+        type="text"
+        onChange={e => setNewMessage(e.target.value)}
       />
       <button onClick={sendMessage}>Inviare</button>
 
     </div>
+
   )
 }
 
