@@ -1,0 +1,47 @@
+@use '../../SCSS/abstracts/mixins' as *;
+@import '../../SCSS/abstracts/variables';
+
+/* html,
+body {
+    font-family: var(--font-lato);
+    font-size: 16px;
+
+    h2 {
+        font-size: 2.441rem;
+        font-weight: 600;
+        line-height: 1;
+        background: $secundary-color;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    
+    h3 {
+        font-size: 1.953rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    h4 {
+        font-size: 1.563rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $secundary-color;
+    }
+
+    h6 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $secundary-color;
+    }
+
+    p {
+        @include p-large (400);
+    }
+}
+ */

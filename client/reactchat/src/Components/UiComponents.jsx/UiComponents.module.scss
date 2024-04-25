@@ -1,0 +1,14 @@
+.ulMessage {
+    max-width: 800px;
+    margin: 10px auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .liMessage {
+    background-color: lightblue;
+    border: 2px solid dodgerblue;
+    padding: 10px 20px;
+  }
