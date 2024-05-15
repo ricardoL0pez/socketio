@@ -13,7 +13,6 @@
     font-style: normal;
     width: 400px;
 
-
     h2 {
         font-weight: 400;
         color: cyan;
@@ -21,60 +20,79 @@
         margin: 0;
     }
 
-    .ulMessage {
-        list-style: none;
+    .chatSection {
+        @include flexbox(column, center, center, center);
         width: 100%;
-        padding: 0;
+
+
+        .ulMessage {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .liMessage {
+            margin: 0;
+            padding: 0;
+            color: rgb(14, 14, 14);
+            font-size: 0.8rem;
+            width: 100%;
+
+            p {
+                margin: 5px;
+                width: 100%;
+                border: 2px solid $primary-color;
+                padding: 5px;
+                background-color: $grey3;
+            }
+        }
+
     }
 
-    .liMessage {
 
-        color: rgb(14, 14, 14);
-        font-size: 0.8rem;
-        width: 100%;
-
-        p {
-            margin: 5px;
+    .messageInputSection {
+        position: fixed;
+        bottom: 5px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+     
+        input {
             width: 100%;
-            border: 2px solid $primary-color;
             padding: 5px;
-            background-color: $grey3;
+            border-radius: 0;
+            height: 30px;
+            margin-block: 1rem;
+            background-color: $grey1;
+            border: 1px solid black;
+            color: white;
+            outline: none;
+        }
+
+        button {
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: #ffff;
+            cursor: pointer;
+            border: none;
+            font-size: 1.5rem;
+        }
+
+        button:hover {
+            /* border: 1px solid cyan; */
+            background-color: white;
+            color: black;
+            border-radius: 0;
+        }
+
+        button:active {
+            border-radius: 0;
+            transform: translateY(-15%);
         }
     }
 
-
-
-    input,
-    button {
-        width: 100%;
-        padding: 5px;
-        border-radius: 0;
-        height: 30px;
-    }
-
-    input {
-        margin-block: 1rem;
-        background-color: $grey1;
-        border: 1px solid black;
-        color: white;
-        outline: none;
-    }
-
-    button {
-
-        background-color: black;
-        color: #ffff;
-        cursor: pointer;
-        border: none;
-    }
-
-    button:hover {
-        border: 1px solid cyan;
-        border-radius: 0;
-    }
-
-    button:active {
-        border-radius: 0;
-        transform: translateY(-15%);
-    }
 }
